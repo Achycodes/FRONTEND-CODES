@@ -10,19 +10,27 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     return;
   }
 
-  const formData = new FormData(form);
+  const data = {
+    first_name: form.first_name.value,
+    last_name: form.last_name.value,
+    email: form.email.value,
+    password: password
+  };
 
   fetch("https://zainabokoth.wuaze.com/signup.php", {
     method: "POST",
-    body: formData,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
   })
-    .then((res) => res.text())
+    .then((res) => res.json())
     .then((data) => {
-      if (data.trim() === "success") {
+      if (data.status === "success") {
         alert("Account created! You will be redirected to login.");
         window.location.href = "user-login.html";
       } else {
-        alert(data);
+        alert(data.message || "Signup failed.");
       }
     })
     .catch((err) => {
