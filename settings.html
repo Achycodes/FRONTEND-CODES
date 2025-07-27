@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard - Vehicle Reminder</title>
+  <link rel="stylesheet" href="settings.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>VEHICLE LICENSING REMINDER</h1>
+    <nav>
+      <a href="user-dashboard.html">Dashboard</a>
+      <a href="user-manage details.html">Manage Details</a>
+      <a href="payment.html">Payment</a>
+      <a href="settings.html">Settings</a>
+      <a href="contact us.html">Contact Us</a>
+      <a href="logout.php">Logout</a>
+    </nav>
+  </header>
+
+  <section class="container">
+    <!-- Update Profile Section -->
+    <h2>Update Personal Information</h2>
+    <form id="profileForm">
+      <label>First Name:</label>
+      <input type="text" name="first_name" required><br>
+
+      <label>Second Name:</label>
+      <input type="text" name="second_name" required><br>
+
+      <label>Username:</label>
+      <input type="text" name="username" required><br>
+
+      <label>Email:</label>
+      <input type="email" name="email" required><br>
+
+      <!-- Hidden username reference for backend -->
+      <input type="hidden" name="username_ref">
+
+      <button type="submit">Update Profile</button>
+      <p id="profileMsg"></p>
+    </form>
+
+    <!-- Change Password Section -->
+    <h2>Change Password</h2>
+    <form id="passwordForm">
+      <input type="password" name="old_password" placeholder="Old Password" required>
+      <input type="password" name="new_password" placeholder="New Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
+
+      <!-- Hidden username reference for backend -->
+      <input type="hidden" name="username_ref">
+
+      <button type="submit">Update Password</button>
+      <p id="passwordMsg"></p>
+    </form>
+  </section>
+
+  <!-- Settings logic for JS -->
+  <script src="settings.js"></script>
+</body>
+</html>

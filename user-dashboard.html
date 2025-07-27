@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard - Vehicle Reminder</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>VEHICLE LICENSING REMINDER</h1>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="user-manage details.html">Manage Details</a>
+      <a href="payment.html">Payment</a>
+      <a href="settings.html">Settings</a>
+      <a href="contact us.html">Contact Us</a>
+      <a href="logout.php">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="card">
+        <h3>Cars Registered</h3>
+        <p id="totalCars">Loading...</p>
+      </div>
+      <div class="card">
+        <h3>Renewal Reminders Sent</h3>
+        <p id="remindersSent">Loading...</p>
+      </div>
+      <div class="card">
+        <h3>Renewed Registrations</h3>
+        <p id="registrationsRenewed">Loading...</p>
+      </div>
+      <div class="card">
+        <h3>Pending Renewals</h3>
+        <p id="pendingRenewals">Loading...</p>
+      </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts">
+      <div class="chart-box">
+        <h3>Registrations Overview</h3>
+        <canvas id="lineChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Registrations by Type</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Recent Table Section -->
+    <section class="recent">
+      <h3>Recent Registrations</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>License Plate</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Registration Date</th>
+          </tr>
+        </thead>
+        <tbody id="recentRegistrations">
+          <!-- Populated via JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

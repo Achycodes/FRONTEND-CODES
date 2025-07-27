@@ -1,0 +1,65 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('VEHICLE\ IMMAGE.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  color: indianred;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.site-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 24px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.buttons button {
+  padding: 12px 25px;
+  font-size: 16px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #00bcd4;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #0097a7;
+}

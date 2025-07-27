@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard - Vehicle Reminder</title>
+  <link rel="stylesheet" href="manage details.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <header>
+    <h1>VEHICLE LICENSING REMINDER</h1>
+    <nav>
+      <a href="user-dashboard.html">Dashboard</a>
+      <a href="user-manage details.html">Manage Details</a>
+      <a href="payment.html">Payment</a>
+      <a href="settings.html">Settings</a>
+      <a href="contact us.html">Contact Us</a>
+      <a href="logout.php">Logout</a>
+    </nav>
+  </header>
+  <section class="filters">
+  <input type="text" id="searchInput" placeholder="Search License Plate...">
+  <select id="vehicleTypeFilter">
+    <option value="">Vehicle Type</option>
+    <option value="Sedan">Sedan</option>
+    <option value="SUV">SUV</option>
+    <option value="Truck">Truck</option>
+  </select>
+  <select id="statusFilter">
+    <option value="">Status</option>
+    <option value="Renewed">Renewed</option>
+    <option value="Pending">Pending</option>
+  </select>
+  <input type="date" id="startDate">
+  <input type="date" id="endDate">
+</section><section class="add-vehicle">
+  <h2>Add New Vehicle</h2>
+  <form id="addVehicleForm">
+    <input type="text" name="license_plate" placeholder="License Plate" required>
+    <input type="text" name="make" placeholder="Make" required>
+    <input type="text" name="model" placeholder="Model" required>
+    <select name="type">
+      <option value="Sedan">Sedan</option>
+      <option value="SUV">SUV</option>
+      <option value="Truck">Truck</option>
+    </select>
+    <input type="date" name="registration_date" required>
+    <input type="date" name="expiry_date" required>
+    <select name="status">
+      <option value="Renewed">Renewed</option>
+      <option value="Pending">Pending</option>
+    </select>
+    <button type="submit" class="add-btn">Add Vehicle</button>
+  </form>
+</section><section class="vehicle-list">
+  <table>
+    <thead>
+      <tr>
+        <th>License Plate</th>
+        <th>Make & Model</th>
+        <th>Vehicle Type</th>
+        <th>Registration Date</th>
+        <th>Expiry</th>
+        <th>Status</th>
+        <th>Reminder</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="vehicleTableBody">
+      <!-- Dynamic Data Fetched from PHP Here -->
+    </tbody>
+  </table>  <div class="pagination">
+    <button>&lt;</button>
+    <span>5 of 6</span>
+    <button>&gt;</button>
+  </div>
+</section>
+<!-- EDIT MODAL -->
+ <div id="editModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeEditModal()">&times;</span>
+    <h2>Edit Vehicle</h2>
+    <form id="editVehicleForm">
+      <input type="hidden" name="id">
+      <input type="text" name="make" placeholder="Make" required>
+      <input type="text" name="model" placeholder="Model" required>
+      <select name="type">
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Truck">Truck</option>
+      </select>
+      <input type="date" name="registration_date" required>
+      <input type="date" name="expiry_date" required>
+      <select name="status">
+        <option value="Renewed">Renewed</option>
+        <option value="Pending">Pending</option>
+      </select>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+<script src="manage-details.js"></script>
+</head>
+<body>
+  
