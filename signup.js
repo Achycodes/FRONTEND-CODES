@@ -17,7 +17,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     password: password
   };
 
-  fetch("zainabokoth.wuaze.com/signup.php", {
+  fetch("https://zainabokoth.wuaze.com/signup.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
