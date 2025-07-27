@@ -11,9 +11,9 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
   }
 
   const data = {
-    first_name: form.first_name.value,
-    last_name: form.last_name.value,
-    email: form.email.value,
+    first_name: form.first_name,
+    last_name: form.last_name,
+    email: form.email,
     password: password
   };
 
