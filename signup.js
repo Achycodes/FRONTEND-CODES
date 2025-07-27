@@ -12,7 +12,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
 
   const formData = new FormData(form);
 
-  fetch("signup.php", {
+  fetch("https://zainabokoth.wuaze.com/signup.php", {
     method: "POST",
     body: formData,
   })
